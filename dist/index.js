@@ -29558,7 +29558,7 @@ const http = __importStar(__nccwpck_require__(227));
 const core = __importStar(__nccwpck_require__(6150));
 async function getApplicationFindings(appGuid, vid, vkey) {
     const getPolicyFindingsByApplicationResource = {
-        resourceUri: `${app_config_1.default.api.veracode.findingsUri}/${appGuid}/findings`,
+        resourceUri: `${app_config_1.default.api.veracode.sandboxUri}/${appGuid}/findings`,
         queryAttribute: 'size',
         queryValue: '1000',
     };

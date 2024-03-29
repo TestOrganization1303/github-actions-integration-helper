@@ -33,3 +33,5 @@ const appConfig: AppConfig = {
 };
 
 export default appConfig;
+
+//appConfig.api.veracode.findingsUri
