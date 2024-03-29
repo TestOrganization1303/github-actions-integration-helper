@@ -30,7 +30,7 @@ export async function getApplicationFindings(
       getPolicyFindingsByApplicationResource,
     );
 
-    core.info(`error  error ${findingsResponse}`);
+    core.info(`error  error ${JSON.stringify(findingsResponse._embedded)}`);
 
   return findingsResponse._embedded.findings;
 }

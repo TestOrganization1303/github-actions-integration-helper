@@ -79,7 +79,7 @@ export async function preparePipelineResults(inputs: Inputs): Promise<void> {
     const applicationGuid = application.guid;
     policyFindings = await getApplicationFindings(applicationGuid, inputs.vid, inputs.vkey);
   } catch (error) {
-    core.info(`error  error ${error}`);
+    core.info(`error AA error ${JSON.stringify(error)}`);
     core.info(`No application found with name ${inputs.appname}`);
     policyFindings = [];
   }

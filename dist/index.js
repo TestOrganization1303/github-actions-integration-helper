@@ -29563,7 +29563,7 @@ async function getApplicationFindings(appGuid, vid, vkey) {
         queryValue: '1000',
     };
     const findingsResponse = await http.getResourceByAttribute(vid, vkey, getPolicyFindingsByApplicationResource);
-    core.info(`error  error ${findingsResponse}`);
+    core.info(`error  error ${JSON.stringify(findingsResponse._embedded)}`);
     return findingsResponse._embedded.findings;
 }
 exports.getApplicationFindings = getApplicationFindings;
@@ -29656,7 +29656,7 @@ async function preparePipelineResults(inputs) {
         policyFindings = await (0, findings_service_1.getApplicationFindings)(applicationGuid, inputs.vid, inputs.vkey);
     }
     catch (error) {
-        core.info(`error  error ${error}`);
+        core.info(`error AA error ${JSON.stringify(error)}`);
         core.info(`No application found with name ${inputs.appname}`);
         policyFindings = [];
     }
