@@ -23,6 +23,8 @@ export async function getApplicationFindings(
     queryValue: '1000',
   };
 
+  core.info(`getPolicyFindingsByApplicationResource:-- ${JSON.stringify(getPolicyFindingsByApplicationResource)}`);
+
   const findingsResponse: VeracodePolicyResult.ResultsData =
     await http.getResourceByAttribute<VeracodePolicyResult.ResultsData>(
       vid,

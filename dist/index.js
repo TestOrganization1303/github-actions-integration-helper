@@ -29562,6 +29562,7 @@ async function getApplicationFindings(appGuid, vid, vkey) {
         queryAttribute: 'size',
         queryValue: '1000',
     };
+    core.info(`getPolicyFindingsByApplicationResource:-- ${JSON.stringify(getPolicyFindingsByApplicationResource)}`);
     const findingsResponse = await http.getResourceByAttribute(vid, vkey, getPolicyFindingsByApplicationResource);
     core.info(`error  error ${JSON.stringify(findingsResponse._embedded)}`);
     return findingsResponse._embedded.findings;
