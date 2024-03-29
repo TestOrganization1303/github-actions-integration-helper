@@ -29049,7 +29049,7 @@ const appConfig = {
     api: {
         veracode: {
             applicationUri: '/appsec/v1/applications',
-            findingsUri: '/appsec/v1/applications',
+            findingsUri: '/appsec/v2/applications',
             sandboxUri: '/appsec/v1/applications/${appGuid}/sandboxes',
             selfUserUri: '/api/authn/v2/users/self',
             policyUri: '/appsec/v1/policies'
@@ -29548,13 +29548,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getApplicationFindings = void 0;
+const app_config_1 = __importDefault(__nccwpck_require__(9901));
 const http = __importStar(__nccwpck_require__(227));
 const core = __importStar(__nccwpck_require__(6150));
 async function getApplicationFindings(appGuid, vid, vkey) {
     const getPolicyFindingsByApplicationResource = {
-        resourceUri: `/appsec/v1/applications/${appGuid}/sandboxes`,
+        resourceUri: `${app_config_1.default.api.veracode.findingsUri}/${appGuid}/findings`,
         queryAttribute: 'size',
         queryValue: '1000',
     };

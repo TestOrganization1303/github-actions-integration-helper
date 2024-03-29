@@ -23,7 +23,7 @@ const appConfig: AppConfig = {
   api: {
     veracode : {
       applicationUri: '/appsec/v1/applications',
-      findingsUri: '/appsec/v1/applications',
+      findingsUri: '/appsec/v2/applications',
       sandboxUri: '/appsec/v1/applications/${appGuid}/sandboxes',
       selfUserUri: '/api/authn/v2/users/self',
       policyUri: '/appsec/v1/policies'
