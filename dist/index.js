@@ -29049,7 +29049,7 @@ const appConfig = {
     api: {
         veracode: {
             applicationUri: '/appsec/v1/applications',
-            findingsUri: '/appsec/v2/applications',
+            findingsUri: '/appsec/v1/applications',
             sandboxUri: '/appsec/v1/applications/${appGuid}/sandboxes',
             selfUserUri: '/api/authn/v2/users/self',
             policyUri: '/appsec/v1/policies'
@@ -29558,7 +29558,7 @@ const http = __importStar(__nccwpck_require__(227));
 const core = __importStar(__nccwpck_require__(6150));
 async function getApplicationFindings(appGuid, vid, vkey) {
     const getPolicyFindingsByApplicationResource = {
-        resourceUri: `${app_config_1.default.api.veracode.sandboxUri}/${appGuid}/findings`,
+        resourceUri: `${app_config_1.default.api.veracode.findingsUri}/${appGuid}/findings`,
         queryAttribute: 'size',
         queryValue: '1000',
     };
