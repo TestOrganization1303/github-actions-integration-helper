@@ -19,7 +19,7 @@ export async function getApplicationFindings(
   // TODO: consider only retrieving the findings that violate policy
   const getPolicyFindingsByApplicationResource = {
     //resourceUri: `${appConfig.api.veracode.findingsUri}/${appGuid}/findings`,
-    resourceUri: `/appsec/v1/applications/${appGuid}/sandboxes/${appGuid}/findings`,
+    resourceUri: `/appsec/v1/applications/${appGuid}/sandboxes`,
     queryAttribute: 'size',
     queryValue: '1000',
   };

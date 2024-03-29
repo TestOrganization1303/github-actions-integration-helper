@@ -29554,7 +29554,7 @@ const http = __importStar(__nccwpck_require__(227));
 const core = __importStar(__nccwpck_require__(6150));
 async function getApplicationFindings(appGuid, vid, vkey) {
     const getPolicyFindingsByApplicationResource = {
-        resourceUri: `/appsec/v1/applications/${appGuid}/sandboxes/${appGuid}/findings`,
+        resourceUri: `/appsec/v1/applications/${appGuid}/sandboxes`,
         queryAttribute: 'size',
         queryValue: '1000',
     };
