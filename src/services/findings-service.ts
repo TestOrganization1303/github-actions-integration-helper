@@ -1,6 +1,7 @@
 import * as VeracodePolicyResult from '../namespaces/VeracodePolicyResult';
 import appConfig from '../app-config';
 import * as http from '../api/http-request';
+import * as core from '@actions/core';
 
 /**
  * Get the policy findings for an application
@@ -28,6 +29,8 @@ export async function getApplicationFindings(
       vkey,
       getPolicyFindingsByApplicationResource,
     );
+
+    core.info(`error  error ${findingsResponse}`);
 
   return findingsResponse._embedded.findings;
 }

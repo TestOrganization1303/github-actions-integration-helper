@@ -29555,6 +29555,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getApplicationFindings = void 0;
 const app_config_1 = __importDefault(__nccwpck_require__(9901));
 const http = __importStar(__nccwpck_require__(227));
+const core = __importStar(__nccwpck_require__(6150));
 async function getApplicationFindings(appGuid, vid, vkey) {
     const getPolicyFindingsByApplicationResource = {
         resourceUri: `${app_config_1.default.api.veracode.findingsUri}/${appGuid}/findings`,
@@ -29562,6 +29563,7 @@ async function getApplicationFindings(appGuid, vid, vkey) {
         queryValue: '1000',
     };
     const findingsResponse = await http.getResourceByAttribute(vid, vkey, getPolicyFindingsByApplicationResource);
+    core.info(`error  error ${findingsResponse}`);
     return findingsResponse._embedded.findings;
 }
 exports.getApplicationFindings = getApplicationFindings;
